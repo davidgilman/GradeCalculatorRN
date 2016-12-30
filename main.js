@@ -2,11 +2,19 @@ import Exponent from 'exponent';
 import React from 'react';
 import {
   Container, Header, Button, View,
-   Text, InputGroup, Input
+   Text, InputGroup, Input, Content
 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 class App extends React.Component {
+  state = { grade: '', percent: '', answer: '' };
+
+  onButtonPress() {
+    this.setState({
+      answer: '4'
+    });
+  }
+
   render() {
     return (
       <Container>
@@ -15,106 +23,30 @@ class App extends React.Component {
           </Header>
 
           <View style={{ flexDirection: 'column', flex: 1 }}>
-              <Grid>
-                <Row size={4}>
-                  <Col>
-                    <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                      <Text style={{ fontSize: 16 }}>Category Grade</Text>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                  </Col>
-                  <Col>
-                  <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 16 }}>Percent of Grade</Text>
-                  </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                    <Row>
-                      <InputGroup borderType='regular' style={{ flex: 1 }} >
-                        <Input placeholder='%' />
-                      </InputGroup>
-                    </Row>
-                  </Col>
-                </Row>
-                <Row size={1}>
-                  <View />
-                </Row>
-              </Grid>
+            <Content>
+              <InputGroup borderType='regular'>
+                <Input
+                  style={{ flex: 1 }}
+                  placeholder='Percent of Grade'
+                  value={this.state.grade}
+                  keyboardType={'numeric'}
+                  onChangeText={text => this.setState({ grade: text })}
+                />
+              </InputGroup>
+              <InputGroup borderType='regular'>
+                <Input
+                  style={{ flex: 1 }}
+                  placeholder='Section Grade'
+                  value={this.state.percent}
+                  onChangeText={text => this.setState({ percent: text })}
+                />
+              </InputGroup>
+              <Text>{this.state.answer}</Text>
+            </Content>
               <Button
               block style={{ backgroundColor: '#2980b9' }}
               large textStyle={{ fontSize: 18 }}
+              onPress={this.onButtonPress.bind(this)}
               >Calculate</Button>
           </View>
       </Container>

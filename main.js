@@ -10,8 +10,10 @@ class App extends React.Component {
   state = { grade: '', percent: '', answer: '' };
 
   onButtonPress() {
+    const grade = this.state.grade;
+    const percent = this.state.percent;
     this.setState({
-      answer: '4'
+      answer: grade * percent
     });
   }
 

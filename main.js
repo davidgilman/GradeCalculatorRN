@@ -59,68 +59,81 @@ class App extends React.Component {
 
           <View style={{ flexDirection: 'column', flex: 1 }}>
             <Content>
-              <InputGroup borderType='regular' iconRight>
-                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
-                <Input
-                  style={{ flex: 1 }}
-                  placeholder='Section Grade'
-                  value={this.state.grade}
-                  keyboardType={'numeric'}
-                  onChangeText={text => this.setState({ grade: text })}
-                />
-              </InputGroup>
-              <InputGroup borderType='regular' iconRight>
-                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
-                <Input
-                  style={{ flex: 1 }}
-                  placeholder='Percent of Grade'
-                  value={this.state.percent}
-                  keyboardType={'numeric'}
-                  onChangeText={text => this.setState({ percent: text })}
-                />
-              </InputGroup>
-              <InputGroup borderType='regular' iconRight>
-                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
-                <Input
-                  style={{ flex: 1 }}
-                  placeholder='Section Grade'
-                  value={this.state.gradeTwo}
-                  keyboardType={'numeric'}
-                  onChangeText={text => this.setState({ gradeTwo: text })}
-                />
-              </InputGroup>
-              <InputGroup borderType='regular' iconRight>
-                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
-                <Input
-                  style={{ flex: 1 }}
-                  placeholder='Percent of Grade'
-                  value={this.state.percentTwo}
-                  keyboardType={'numeric'}
-                  onChangeText={text => this.setState({ percentTwo: text })}
-                />
-              </InputGroup>
-              <InputGroup borderType='regular' iconRight>
-                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
-                <Input
-                  style={{ flex: 1 }}
-                  placeholder='Section Grade'
-                  value={this.state.gradeThree}
-                  keyboardType={'numeric'}
-                  onChangeText={text => this.setState({ gradeThree: text })}
-                />
-              </InputGroup>
-              <InputGroup borderType='regular' iconRight>
-                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
-                <Input
-                  style={{ flex: 1 }}
-                  placeholder='Percent of Grade'
-                  value={this.state.percentThree}
-                  keyboardType={'numeric'}
-                  onChangeText={text => this.setState({ percentThree: text })}
-                />
-              </InputGroup>
+              <Grid>
+                <Col>
+                  <Row>
+                    <InputGroup borderType='regular' style={{ flex: 1 }} >
+                      <Input
+                        style={{ flex: 1 }}
+                        placeholder='Section Grade'
+                        value={this.state.grade}
+                        keyboardType={'numeric'}
+                        onChangeText={text => this.setState({ grade: text })}
+                      />
+                    </InputGroup>
+                  </Row>
+                  <Row>
+                    <InputGroup borderType='regular' style={{ flex: 1 }} >
+                      <Input
+                        style={{ flex: 1 }}
+                        placeholder='Section Grade'
+                        value={this.state.gradeTwo}
+                        keyboardType={'numeric'}
+                        onChangeText={text => this.setState({ gradeTwo: text })}
+                      />
+                    </InputGroup>
+                  </Row>
+                  <Row>
+                    <InputGroup borderType='regular' style={{ flex: 1 }} >
+                      <Input
+                        style={{ flex: 1 }}
+                        placeholder='Section Grade'
+                        value={this.state.gradeThree}
+                        keyboardType={'numeric'}
+                        onChangeText={text => this.setState({ gradeThree: text })}
+                      />
+                    </InputGroup>
+                  </Row>
+                </Col>
+                <Col>
+                  <Row>
+                    <InputGroup borderType='regular' style={{ flex: 1 }} >
+                      <Input
+                        style={{ flex: 1 }}
+                        placeholder='Percent of Grade'
+                        value={this.state.percent}
+                        keyboardType={'numeric'}
+                        onChangeText={text => this.setState({ percent: text })}
+                      />
+                    </InputGroup>
+                  </Row>
+                  <Row>
+                    <InputGroup borderType='regular' style={{ flex: 1 }} >
+                      <Input
+                        style={{ flex: 1 }}
+                        placeholder='Percent of Grade'
+                        value={this.state.percentTwo}
+                        keyboardType={'numeric'}
+                        onChangeText={text => this.setState({ percentTwo: text })}
+                      />
+                    </InputGroup>
+                  </Row>
+                  <Row>
+                    <InputGroup borderType='regular' style={{ flex: 1 }} >
+                      <Input
+                        style={{ flex: 1 }}
+                        placeholder='Percent of Grade'
+                        value={this.state.percentThree}
+                        keyboardType={'numeric'}
+                        onChangeText={text => this.setState({ percentThree: text })}
+                      />
+                    </InputGroup>
+                  </Row>
+                </Col>
+              </Grid>
               <Text>Your grade is : {this.state.answer}</Text>
             </Content>
+
               <Button
               block style={{ backgroundColor: '#2980b9' }}
               large textStyle={{ fontSize: 18 }}

@@ -20,32 +20,33 @@ class App extends React.Component {
       if (value === '') {
         return 0;
       } else {
-        return parseInt(value);
+        return parseFloat(value);
       }
     };
 
     const grade = check(this.state.grade);
-    console.log(grade);
     const gradeTwo = check(this.state.gradeTwo);
-    console.log(gradeTwo);
     const gradeThree = check(this.state.gradeThree);
-    console.log(gradeThree);
     const percent = check(this.state.percent);
-    console.log(percent);
     const percentTwo = check(this.state.percentTwo);
-    console.log(percentTwo);
     const percentThree = check(this.state.percentThree);
-    console.log(percentThree);
 
     const totalPercent = percent + percentTwo + percentThree;
-    console.log(totalPercent);
-    console.log("stop");
     const tPercent = 100 / totalPercent;
 
     const answer = (((grade * (percent / 100)) + (gradeTwo * (percentTwo / 100))
     + (gradeThree * (percentThree / 100))) * tPercent);
 
     this.setState({ answer }); //answer: answer (used shorthand)
+  }
+
+  onClearPress() {
+    this.setState({ grade: '' });
+    this.setState({ percent: '' });
+    this.setState({ gradeTwo: '' });
+    this.setState({ percentTwo: '' });
+    this.setState({ gradeThree: '' });
+    this.setState({ percentThree: '' });
   }
 
 
@@ -128,7 +129,7 @@ class App extends React.Component {
               <Button
               block style={{ backgroundColor: '#2980b9' }}
               large textStyle={{ fontSize: 18 }}
-              onPress={this.onButtonPress.bind(this)}
+              onPress={this.onClearPress.bind(this)}
               >Reset Form</Button>
           </View>
       </Container>

@@ -23,7 +23,9 @@ class App extends React.Component {
     const percentTwo = this.state.percentTwo / 100;
     const percentThree = this.state.percentThree / 100;
 
-    const totalPercent = this.state.percent + this.state.percentTwo + this.state.percentThree;
+    const totalPercent = parseInt(this.state.percent)
+    + parseInt(this.state.percentTwo)
+    + parseInt(this.state.percentThree);
     console.log(totalPercent);
     const tPercent = 100 / totalPercent;
 

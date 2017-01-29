@@ -7,28 +7,38 @@ import {
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 class App extends React.Component {
-  state = { grade: '', percent: '', answer: '' };
+  state = { grade: '',
+   percent: '',
+   answer: '',
+   gradeTwo: '',
+   percentTwo: '',
+   gradeThree: '',
+   percentThree: '', };
 
   onButtonPress() {
     const grade = this.state.grade;
-    const percent = 0.01 * this.state.percent;
-    var answer = grade * percent;
-    if (answer > 100) { //not exact logic, but sorta :P
-      answer = 'grade percentage exceeds 100%';
-    }
-    //deal with percentage input
-    //if-else statement (to restrict percentages)
-    //all values of percent added together has to be </= 100 or else return _.
-    this.setState({
-      answer: answer
-    });
+    const gradeTwo = this.state.gradeTwo;
+    const gradeThree = this.state.gradeThree;
+    const percent = this.state.percent / 100;
+    const percentTwo = this.state.percentTwo / 100;
+    const percentThree = this.state.percentThree / 100;
+
+    const totalPercent = this.state.percent + this.state.percentTwo + this.state.percentThree;
+    console.log(totalPercent);
+    const tPercent = 100 / totalPercent;
+
+    const answer = (((grade * percent) + (gradeTwo * percentTwo)
+    + (gradeThree * percentThree)) * tPercent);
+
+    this.setState({ answer }); //answer: answer (used shorthand)
   }
+
 
   render() {
     return (
       <Container>
           <Header style={{ backgroundColor: '#34495e' }}>
-              <Text style={{ color: 'white', fontSize: 18 }}>Grade Calculator</Text>
+              <Text style={{ color: 'white', fontSize: 18 }}>What is my Grade?</Text>
           </Header>
 
           <View style={{ flexDirection: 'column', flex: 1 }}>
@@ -51,6 +61,46 @@ class App extends React.Component {
                   value={this.state.percent}
                   keyboardType={'numeric'}
                   onChangeText={text => this.setState({ percent: text })}
+                />
+              </InputGroup>
+              <InputGroup borderType='regular' iconRight>
+                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
+                <Input
+                  style={{ flex: 1 }}
+                  placeholder='Section Grade'
+                  value={this.state.gradeTwo}
+                  keyboardType={'numeric'}
+                  onChangeText={text => this.setState({ gradeTwo: text })}
+                />
+              </InputGroup>
+              <InputGroup borderType='regular' iconRight>
+                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
+                <Input
+                  style={{ flex: 1 }}
+                  placeholder='Percent of Grade'
+                  value={this.state.percentTwo}
+                  keyboardType={'numeric'}
+                  onChangeText={text => this.setState({ percentTwo: text })}
+                />
+              </InputGroup>
+              <InputGroup borderType='regular' iconRight>
+                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
+                <Input
+                  style={{ flex: 1 }}
+                  placeholder='Section Grade'
+                  value={this.state.gradeThree}
+                  keyboardType={'numeric'}
+                  onChangeText={text => this.setState({ gradeThree: text })}
+                />
+              </InputGroup>
+              <InputGroup borderType='regular' iconRight>
+                <Icon name='ios-checkmark-circle' style={{ color: '#2980b9' }} />
+                <Input
+                  style={{ flex: 1 }}
+                  placeholder='Percent of Grade'
+                  value={this.state.percentThree}
+                  keyboardType={'numeric'}
+                  onChangeText={text => this.setState({ percentThree: text })}
                 />
               </InputGroup>
               <Text>Your grade is : {this.state.answer}</Text>

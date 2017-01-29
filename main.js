@@ -290,7 +290,7 @@ class App extends React.Component {
               </Grid>
                 <CardItem style={{ justifyContent: 'center', alignItems: 'center' }}>
                   <Text style={{ fontSize: 16 }}>
-                  Your grade is : {this.state.answer}</Text>
+                  My grade is: {this.state.answer}%</Text>
                 </CardItem>
               <CardItem>
               <Button

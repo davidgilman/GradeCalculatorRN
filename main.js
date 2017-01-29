@@ -16,21 +16,34 @@ class App extends React.Component {
    percentThree: '', };
 
   onButtonPress() {
-    const grade = this.state.grade;
-    const gradeTwo = this.state.gradeTwo;
-    const gradeThree = this.state.gradeThree;
-    const percent = this.state.percent / 100;
-    const percentTwo = this.state.percentTwo / 100;
-    const percentThree = this.state.percentThree / 100;
+    const check = function (value) {
+      if (value === '') {
+        return 0;
+      } else {
+        return parseInt(value);
+      }
+    };
 
-    const totalPercent = parseInt(this.state.percent)
-    + parseInt(this.state.percentTwo)
-    + parseInt(this.state.percentThree);
+    const grade = check(this.state.grade);
+    console.log(grade);
+    const gradeTwo = check(this.state.gradeTwo);
+    console.log(gradeTwo);
+    const gradeThree = check(this.state.gradeThree);
+    console.log(gradeThree);
+    const percent = check(this.state.percent);
+    console.log(percent);
+    const percentTwo = check(this.state.percentTwo);
+    console.log(percentTwo);
+    const percentThree = check(this.state.percentThree);
+    console.log(percentThree);
+
+    const totalPercent = percent + percentTwo + percentThree;
     console.log(totalPercent);
+    console.log("stop");
     const tPercent = 100 / totalPercent;
 
-    const answer = (((grade * percent) + (gradeTwo * percentTwo)
-    + (gradeThree * percentThree)) * tPercent);
+    const answer = (((grade * (percent / 100)) + (gradeTwo * (percentTwo / 100))
+    + (gradeThree * (percentThree / 100))) * tPercent);
 
     this.setState({ answer }); //answer: answer (used shorthand)
   }

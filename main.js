@@ -112,6 +112,11 @@ class App extends React.Component {
               large textStyle={{ fontSize: 18 }}
               onPress={this.onButtonPress.bind(this)}
               >Calculate</Button>
+              <Button
+              block style={{ backgroundColor: '#2980b9' }}
+              large textStyle={{ fontSize: 18 }}
+              onPress={this.onButtonPress.bind(this)}
+              >Reset Form</Button>
           </View>
       </Container>
     );

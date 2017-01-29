@@ -94,7 +94,7 @@ class App extends React.Component {
           </Header>
 
           <View style={{ flexDirection: 'column', flex: 1 }}>
-            <Content>
+            <Content scrollEnabled={false}>
               <Card>
               <Grid>
                 <Col>

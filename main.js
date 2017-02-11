@@ -1,23 +1,43 @@
 import Exponent from 'exponent';
-import React, { Component } from 'react';
-import { Container, Content, Tabs } from 'native-base';
-
-import TabOne from './src/WeightedCalc';
-import TabTwo from './src/OtherCalc';
+import React from 'react';
+import {
+  StyleSheet,
+  View
+} from 'react-native';
+import {
+  NavigationProvider,
+  StackNavigation
+} from '@exponent/ex-navigation';
+import Router from './navigation/Router';
 
 class App extends React.Component {
-    render() {
-        return (
-            <Container>
-                <Content>
-                    <Tabs>
-                        <TabOne tabLabel='One' />
-                        <TabTwo tabLabel='Two' />
-                    </Tabs>
-                </Content>
-            </Container>
-        );
+  static route = {
+    navigationBar: {
+      visible: false,
     }
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+        <NavigationProvider router={Router}>
+          <StackNavigation
+            id='root'
+            initialRoute={Router.getRoute('rootNavigation')} />
+        </NavigationProvider>
+      </View>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  statusBarUnderlay: {
+    height: 24,
+    backgroundColor: 'rgba(0,0,0,0.2)',
+  },
+});
 
 Exponent.registerRootComponent(App);

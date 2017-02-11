@@ -93,7 +93,7 @@ class WeightedCalc extends React.Component {
           </Header>
 
           <View style={{ flexDirection: 'column', flex: 1 }}>
-            <Content scrollEnabled={false}>
+            <Content>
               <Card>
               <Grid>
                 <Col>

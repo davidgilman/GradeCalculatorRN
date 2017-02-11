@@ -5,7 +5,7 @@ import {
 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
-class WeightedCalc extends React.Component {
+class OtherCalc extends React.Component {
   state = { grade: '',
    percent: '',
    answer: '',
@@ -89,7 +89,7 @@ class WeightedCalc extends React.Component {
     return (
       <Container>
           <Header style={{ backgroundColor: '#34495e' }}>
-              <Text style={{ color: 'white', fontSize: 18 }}>Weighted Grade</Text>
+              <Text style={{ color: 'white', fontSize: 18 }}>Final Exam</Text>
           </Header>
 
           <View style={{ flexDirection: 'column', flex: 1 }}>
@@ -311,4 +311,4 @@ class WeightedCalc extends React.Component {
   }
 }
 
-export default WeightedCalc;
+export default OtherCalc;

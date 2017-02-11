@@ -9,16 +9,9 @@ import {
 } from '@exponent/vector-icons';
 
 const Colors = {
-  tintColor: '#2f95dc',
   tabIconDefault: '#888',
   tabIconSelected: '#fefefe',
   tabBar: '#34495e',
-  errorBackground: 'red',
-  errorText: '#fff',
-  warningBackground: '#EAEB5E',
-  warningText: '#666804',
-  noticeBackground: '#2f95dc',
-  noticeText: '#fff',
 };
 
 export default class RootNavigation extends React.Component {
@@ -31,15 +24,21 @@ export default class RootNavigation extends React.Component {
                 >
                 <TabNavigationItem
                     id='weighted'
-                    renderIcon={isSelected => this._renderIcon('home', isSelected)}
+                    renderIcon={isSelected => this._renderIcon('briefcase', isSelected)}
                     >
                     <StackNavigation initialRoute='weighted' />
                 </TabNavigationItem>
                 <TabNavigationItem
-                    id='other'
-                    renderIcon={isSelected => this._renderIcon('user-circle', isSelected)}
+                    id='gpa'
+                    renderIcon={isSelected => this._renderIcon('university', isSelected)}
                     >
-                    <StackNavigation initialRoute='other' />
+                    <StackNavigation initialRoute='gpa' />
+                </TabNavigationItem>
+                <TabNavigationItem
+                    id='final'
+                    renderIcon={isSelected => this._renderIcon('graduation-cap', isSelected)}
+                    >
+                    <StackNavigation initialRoute='final' />
                 </TabNavigationItem>
             </TabNavigation>
         );
@@ -48,7 +47,7 @@ export default class RootNavigation extends React.Component {
       return (
         <FontAwesome
           name={name}
-          size={32}
+          size={20}
           color={isSelected ? Colors.tabIconSelected : Colors.tabIconDefault}
           />
       );

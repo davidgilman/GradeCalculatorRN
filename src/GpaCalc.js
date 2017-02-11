@@ -89,7 +89,7 @@ class OtherCalc extends React.Component {
     return (
       <Container>
           <Header style={{ backgroundColor: '#34495e' }}>
-              <Text style={{ color: 'white', fontSize: 18 }}>What is my Grade?</Text>
+              <Text style={{ color: 'white', fontSize: 18 }}>GPA</Text>
           </Header>
 
           <View style={{ flexDirection: 'column', flex: 1 }}>

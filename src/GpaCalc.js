@@ -1,12 +1,14 @@
 import React from 'react';
 import {
   Container, Header, Button, View,
-   Text, InputGroup, Input, Content, Card, CardItem
+   Text, InputGroup, Input, Content, Card, CardItem, Picker
 } from 'native-base';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Row, Grid } from 'react-native-easy-grid';
+
 
 class GpaCalc extends React.Component {
-  state = { grade: '',
+
+  state = { grade: 'key0',
    percent: '',
    answer: '',
    gradeTwo: '',
@@ -21,8 +23,13 @@ class GpaCalc extends React.Component {
    percentSix: '',
    gradeSeven: '',
    percentSeven: '',
-   gradeEight: '',
-   percentEight: '' };
+   gradeEight: '', };
+
+  onValueChange(value: string) {
+     this.setState({
+       grade: value
+     });
+    }
 
   onButtonPress() {
     const check = function (value) {
@@ -96,28 +103,38 @@ class GpaCalc extends React.Component {
             <Content>
               <Card>
               <Grid>
-                <Col>
                 <CardItem>
                   <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 16 }}>Section Grade</Text>
+                    <Text style={{ fontSize: 16 }}>Class Grade</Text>
                   </Row>
                 </CardItem>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='%'
-                        value={this.state.grade}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ grade: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        style={{ width: 100 }}
+                        mode="dropdown"
+                        selectedValue={this.state.grade}
+                        onValueChange={this.onValueChange.bind(this)}>
+                        <Picker.Item label="A++" value="key0" />
+                        <Picker.Item label="A+" value="key1" />
+                        <Picker.Item label="A" value="key2" />
+                        <Picker.Item label="A-" value="key3" />
+                        <Picker.Item label="B+" value="key4" />
+                        <Picker.Item label="B" value="key5" />
+                        <Picker.Item label="B-" value="key6" />
+                        <Picker.Item label="C+" value="key7" />
+                        <Picker.Item label="C" value="key8" />
+                        <Picker.Item label="C-" value="key9" />
+                        <Picker.Item label="D+" value="key10" />
+                        <Picker.Item label="D" value="key11" />
+                        <Picker.Item label="D-" value="key12" />
+                        <Picker.Item label="F" value="key13" />
+                   </Picker>
                   </Row>
                   <Row>
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.gradeTwo}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ gradeTwo: text })}
@@ -128,7 +145,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.gradeThree}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ gradeThree: text })}
@@ -139,7 +156,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.gradeFour}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ gradeFour: text })}
@@ -150,7 +167,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.gradeFive}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ gradeFive: text })}
@@ -161,7 +178,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.gradeSix}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ gradeSix: text })}
@@ -172,7 +189,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.gradeSeven}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ gradeSeven: text })}
@@ -183,25 +200,18 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.gradeEight}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ gradeEight: text })}
                       />
                     </InputGroup>
                   </Row>
-                </Col>
-                <Col>
-                <CardItem>
-                  <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 16 }}>Percent of Grade</Text>
-                  </Row>
-                </CardItem>
                   <Row>
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.percent}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ percent: text })}
@@ -212,7 +222,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.percentTwo}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ percentTwo: text })}
@@ -223,7 +233,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.percentThree}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ percentThree: text })}
@@ -234,7 +244,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.percentFour}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ percentFour: text })}
@@ -245,7 +255,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.percentFive}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ percentFive: text })}
@@ -256,7 +266,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.percentSix}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ percentSix: text })}
@@ -267,7 +277,7 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.percentSeven}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ percentSeven: text })}
@@ -278,18 +288,17 @@ class GpaCalc extends React.Component {
                     <InputGroup borderType='regular' style={{ flex: 1 }} >
                       <Input
                         style={{ flex: 1 }}
-                        placeholder='%'
+                        placeholder='-'
                         value={this.state.percentEight}
                         keyboardType={'numeric'}
                         onChangeText={text => this.setState({ percentEight: text })}
                       />
                     </InputGroup>
                   </Row>
-                </Col>
               </Grid>
                 <CardItem style={{ justifyContent: 'center', alignItems: 'center' }}>
                   <Text style={{ fontSize: 16 }}>
-                  My grade is: {this.state.answer}%</Text>
+                  My GPA is: {this.state.answer}</Text>
                 </CardItem>
               <CardItem>
               <Button

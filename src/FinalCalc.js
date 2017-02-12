@@ -14,7 +14,7 @@ class FinalCalc extends React.Component {
   onButtonPress() {
     const check = function (value) {
       if (value === '') {
-        return 0; //add in message
+        return 0;
       } else {
         return parseFloat(value);
       }
@@ -24,19 +24,14 @@ class FinalCalc extends React.Component {
     const desiredGrade = check(this.state.desiredGrade);
     const examWeight = check(this.state.examWeight);
 
-    console.log(desiredGrade);
     console.log(currentGrade);
+    console.log(desiredGrade);
     console.log(examWeight);
 
-    //const totalPercent = percent + percentTwo + percentThree + percentFour
-    //+ percentFive + percentSix + percentSeven + percentEight;
-    //const tPercent = 100 / totalPercent;
+    const answerBefore = ((1 * (desiredGrade / 100)) -
+     ((1 - (examWeight / 100)) * (currentGrade / 100))) / (examWeight / 100);
 
-    //const answer = (((grade * (percent / 100)) + (gradeTwo * (percentTwo / 100))
-    //+ (gradeThree * (percentThree / 100)) + (gradeFour * (percentFour / 100))
-    //+ (gradeFive * (percentFive / 100)) + (gradeSix * (percentSix / 100))
-    //+ (gradeSeven * (percentSeven / 100)) + (gradeEight * (percentEight / 100)))
-    //* tPercent);
+    const answer = answerBefore * 100;
 
     this.setState({ answer }); //answer: answer (used shorthand)
   }
@@ -100,13 +95,13 @@ class FinalCalc extends React.Component {
                 </CardItem>
               <CardItem>
               <Button
-              block style={{ backgroundColor: '#2980b9' }}
+              block style={{ backgroundColor: '#2980b9', height: 45 }}
               large textStyle={{ fontSize: 18 }}
               onPress={this.onButtonPress.bind(this)}
               >Calculate</Button></CardItem>
               <CardItem>
               <Button
-              block style={{ backgroundColor: '#2980b9' }}
+              block style={{ backgroundColor: '#2980b9', height: 45 }}
               large textStyle={{ fontSize: 18 }}
               onPress={this.onClearPress.bind(this)}
               >Reset Form</Button></CardItem>

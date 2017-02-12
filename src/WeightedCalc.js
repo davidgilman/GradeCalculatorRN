@@ -293,13 +293,13 @@ class WeightedCalc extends React.Component {
                 </CardItem>
               <CardItem>
               <Button
-              block style={{ backgroundColor: '#2980b9' }}
+              block style={{ backgroundColor: '#2980b9', height: 45 }}
               large textStyle={{ fontSize: 18 }}
               onPress={this.onButtonPress.bind(this)}
               >Calculate</Button></CardItem>
               <CardItem>
               <Button
-              block style={{ backgroundColor: '#2980b9' }}
+              block style={{ backgroundColor: '#2980b9', height: 45 }}
               large textStyle={{ fontSize: 18 }}
               onPress={this.onClearPress.bind(this)}
               >Reset Form</Button></CardItem>

@@ -1,33 +1,123 @@
 import React from 'react';
 import {
   Container, Header, Button, View,
-   Text, InputGroup, Input, Content, Card, CardItem, Picker
+   Text, Content, Card, CardItem, Picker
 } from 'native-base';
-import { Row, Grid } from 'react-native-easy-grid';
-
+import { Col, Row, Grid } from 'react-native-easy-grid';
 
 class GpaCalc extends React.Component {
 
   state = { grade: 'key0',
-   percent: '',
+   unit: 'key0',
    answer: '',
-   gradeTwo: '',
-   percentTwo: '',
-   gradeThree: '',
-   percentThree: '',
-   gradeFour: '',
-   percentFour: '',
-   gradeFive: '',
-   percentFive: '',
-   gradeSix: '',
-   percentSix: '',
-   gradeSeven: '',
-   percentSeven: '',
-   gradeEight: '', };
+   gradeTwo: 'key0',
+   unitTwo: 'key0',
+   gradeThree: 'key0',
+   unitThree: 'key0',
+   gradeFour: 'key0',
+   unitFour: 'key0',
+   gradeFive: 'key0',
+   unitFive: 'key0',
+   gradeSix: 'key0',
+   unitSix: 'key0',
+   gradeSeven: 'key0',
+   unitSeven: 'key0',
+   gradeEight: 'key0',
+   unitEight: 'key0', };
 
-  onValueChange(value: string) {
+  onGradeChange(value: string) {
      this.setState({
        grade: value
+     });
+    }
+
+  onUnitChange(value: string) {
+     this.setState({
+       unit: value
+     });
+    }
+
+  onGradeTwoChange(value: string) {
+     this.setState({
+       gradeTwo: value
+     });
+    }
+
+  onUnitTwoChange(value: string) {
+     this.setState({
+       unitTwo: value
+     });
+    }
+
+  onGradeThreeChange(value: string) {
+     this.setState({
+       gradeThree: value
+     });
+    }
+
+  onUnitThreeChange(value: string) {
+     this.setState({
+       unitThree: value
+     });
+    }
+
+  onGradeFourChange(value: string) {
+     this.setState({
+       gradeFour: value
+     });
+    }
+
+  onUnitFourChange(value: string) {
+     this.setState({
+       unitFour: value
+     });
+    }
+
+  onGradeFiveChange(value: string) {
+     this.setState({
+       gradeFive: value
+     });
+    }
+
+  onUnitFiveChange(value: string) {
+     this.setState({
+       unitFive: value
+     });
+    }
+
+  onGradeSixChange(value: string) {
+     this.setState({
+       gradeSix: value
+     });
+    }
+
+  onUnitSixChange(value: string) {
+     this.setState({
+       unitSix: value
+     });
+    }
+
+  onGradeSevenChange(value: string) {
+     this.setState({
+       gradeSeven: value
+     });
+    }
+
+  onUnitSevenChange(value: string) {
+     this.setState({
+       unitSeven: value
+     });
+    }
+
+  onGradeEightChange(value: string) {
+     this.setState({
+       gradeEight: value
+     });
+    }
+
+  onUnitEightChange(value: string) {
+     this.setState({
+       unitEight: value
      });
     }
 
@@ -49,45 +139,45 @@ class GpaCalc extends React.Component {
     const gradeSeven = check(this.state.gradeSeven);
     const gradeEight = check(this.state.gradeEight);
 
-    const percent = check(this.state.percent);
-    const percentTwo = check(this.state.percentTwo);
-    const percentThree = check(this.state.percentThree);
-    const percentFour = check(this.state.percentFour);
-    const percentFive = check(this.state.percentFive);
-    const percentSix = check(this.state.percentSix);
-    const percentSeven = check(this.state.percentSeven);
-    const percentEight = check(this.state.percentEight);
+    const unit = check(this.state.unit);
+    const unitTwo = check(this.state.unitTwo);
+    const unitThree = check(this.state.unitThree);
+    const unitFour = check(this.state.unitFour);
+    const unitFive = check(this.state.unitFive);
+    const unitSix = check(this.state.unitSix);
+    const unitSeven = check(this.state.unitSeven);
+    const unitEight = check(this.state.unitEight);
 
-    const totalPercent = percent + percentTwo + percentThree + percentFour
-    + percentFive + percentSix + percentSeven + percentEight;
-    const tPercent = 100 / totalPercent;
+    const totalunit = unit + unitTwo + unitThree + unitFour
+    + unitFive + unitSix + unitSeven + unitEight;
+    const tunit = 100 / totalunit;
 
-    const answer = (((grade * (percent / 100)) + (gradeTwo * (percentTwo / 100))
-    + (gradeThree * (percentThree / 100)) + (gradeFour * (percentFour / 100))
-    + (gradeFive * (percentFive / 100)) + (gradeSix * (percentSix / 100))
-    + (gradeSeven * (percentSeven / 100)) + (gradeEight * (percentEight / 100)))
-    * tPercent);
+    const answer = (((grade * (unit / 100)) + (gradeTwo * (unitTwo / 100))
+    + (gradeThree * (unitThree / 100)) + (gradeFour * (unitFour / 100))
+    + (gradeFive * (unitFive / 100)) + (gradeSix * (unitSix / 100))
+    + (gradeSeven * (unitSeven / 100)) + (gradeEight * (unitEight / 100)))
+    * tunit);
 
     this.setState({ answer }); //answer: answer (used shorthand)
   }
 
   onClearPress() {
     this.setState({ grade: '' });
-    this.setState({ percent: '' });
+    this.setState({ unit: '' });
     this.setState({ gradeTwo: '' });
-    this.setState({ percentTwo: '' });
+    this.setState({ unitTwo: '' });
     this.setState({ gradeThree: '' });
-    this.setState({ percentThree: '' });
+    this.setState({ unitThree: '' });
     this.setState({ gradeFour: '' });
-    this.setState({ percentFour: '' });
+    this.setState({ unitFour: '' });
     this.setState({ gradeFive: '' });
-    this.setState({ percentFive: '' });
+    this.setState({ unitFive: '' });
     this.setState({ gradeSix: '' });
-    this.setState({ percentSix: '' });
+    this.setState({ unitSix: '' });
     this.setState({ gradeSeven: '' });
-    this.setState({ percentSeven: '' });
+    this.setState({ unitSeven: '' });
     this.setState({ gradeEight: '' });
-    this.setState({ percentEight: '' });
+    this.setState({ unitEight: '' });
     this.setState({ answer: '' });
   }
 
@@ -103,6 +193,7 @@ class GpaCalc extends React.Component {
             <Content>
               <Card>
               <Grid>
+                <Col>
                 <CardItem>
                   <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ fontSize: 16 }}>Class Grade</Text>
@@ -110,11 +201,12 @@ class GpaCalc extends React.Component {
                 </CardItem>
                   <Row>
                     <Picker
-                        style={{ width: 100 }}
+                        iosHeader="Select Grade"
+                        style={{ width: 100, flex: 1 }}
                         mode="dropdown"
                         selectedValue={this.state.grade}
-                        onValueChange={this.onValueChange.bind(this)}>
-                        <Picker.Item label="A++" value="key0" />
+                        onValueChange={this.onGradeChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
                         <Picker.Item label="A+" value="key1" />
                         <Picker.Item label="A" value="key2" />
                         <Picker.Item label="A-" value="key3" />
@@ -131,170 +223,302 @@ class GpaCalc extends React.Component {
                    </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.gradeTwo}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ gradeTwo: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Grade"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.gradeTwo}
+                        onValueChange={this.onGradeTwoChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="A+" value="key1" />
+                        <Picker.Item label="A" value="key2" />
+                        <Picker.Item label="A-" value="key3" />
+                        <Picker.Item label="B+" value="key4" />
+                        <Picker.Item label="B" value="key5" />
+                        <Picker.Item label="B-" value="key6" />
+                        <Picker.Item label="C+" value="key7" />
+                        <Picker.Item label="C" value="key8" />
+                        <Picker.Item label="C-" value="key9" />
+                        <Picker.Item label="D+" value="key10" />
+                        <Picker.Item label="D" value="key11" />
+                        <Picker.Item label="D-" value="key12" />
+                        <Picker.Item label="F" value="key13" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.gradeThree}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ gradeThree: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Grade"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.gradeThree}
+                        onValueChange={this.onGradeThreeChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="A+" value="key1" />
+                        <Picker.Item label="A" value="key2" />
+                        <Picker.Item label="A-" value="key3" />
+                        <Picker.Item label="B+" value="key4" />
+                        <Picker.Item label="B" value="key5" />
+                        <Picker.Item label="B-" value="key6" />
+                        <Picker.Item label="C+" value="key7" />
+                        <Picker.Item label="C" value="key8" />
+                        <Picker.Item label="C-" value="key9" />
+                        <Picker.Item label="D+" value="key10" />
+                        <Picker.Item label="D" value="key11" />
+                        <Picker.Item label="D-" value="key12" />
+                        <Picker.Item label="F" value="key13" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.gradeFour}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ gradeFour: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Grade"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.gradeFour}
+                        onValueChange={this.onGradeFourChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="A+" value="key1" />
+                        <Picker.Item label="A" value="key2" />
+                        <Picker.Item label="A-" value="key3" />
+                        <Picker.Item label="B+" value="key4" />
+                        <Picker.Item label="B" value="key5" />
+                        <Picker.Item label="B-" value="key6" />
+                        <Picker.Item label="C+" value="key7" />
+                        <Picker.Item label="C" value="key8" />
+                        <Picker.Item label="C-" value="key9" />
+                        <Picker.Item label="D+" value="key10" />
+                        <Picker.Item label="D" value="key11" />
+                        <Picker.Item label="D-" value="key12" />
+                        <Picker.Item label="F" value="key13" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.gradeFive}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ gradeFive: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Grade"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.gradeFive}
+                        onValueChange={this.onGradeFiveChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="A+" value="key1" />
+                        <Picker.Item label="A" value="key2" />
+                        <Picker.Item label="A-" value="key3" />
+                        <Picker.Item label="B+" value="key4" />
+                        <Picker.Item label="B" value="key5" />
+                        <Picker.Item label="B-" value="key6" />
+                        <Picker.Item label="C+" value="key7" />
+                        <Picker.Item label="C" value="key8" />
+                        <Picker.Item label="C-" value="key9" />
+                        <Picker.Item label="D+" value="key10" />
+                        <Picker.Item label="D" value="key11" />
+                        <Picker.Item label="D-" value="key12" />
+                        <Picker.Item label="F" value="key13" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.gradeSix}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ gradeSix: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Grade"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.gradeSix}
+                        onValueChange={this.onGradeSixChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="A+" value="key1" />
+                        <Picker.Item label="A" value="key2" />
+                        <Picker.Item label="A-" value="key3" />
+                        <Picker.Item label="B+" value="key4" />
+                        <Picker.Item label="B" value="key5" />
+                        <Picker.Item label="B-" value="key6" />
+                        <Picker.Item label="C+" value="key7" />
+                        <Picker.Item label="C" value="key8" />
+                        <Picker.Item label="C-" value="key9" />
+                        <Picker.Item label="D+" value="key10" />
+                        <Picker.Item label="D" value="key11" />
+                        <Picker.Item label="D-" value="key12" />
+                        <Picker.Item label="F" value="key13" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.gradeSeven}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ gradeSeven: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Grade"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.gradeSeven}
+                        onValueChange={this.onGradeSevenChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="A+" value="key1" />
+                        <Picker.Item label="A" value="key2" />
+                        <Picker.Item label="A-" value="key3" />
+                        <Picker.Item label="B+" value="key4" />
+                        <Picker.Item label="B" value="key5" />
+                        <Picker.Item label="B-" value="key6" />
+                        <Picker.Item label="C+" value="key7" />
+                        <Picker.Item label="C" value="key8" />
+                        <Picker.Item label="C-" value="key9" />
+                        <Picker.Item label="D+" value="key10" />
+                        <Picker.Item label="D" value="key11" />
+                        <Picker.Item label="D-" value="key12" />
+                        <Picker.Item label="F" value="key13" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.gradeEight}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ gradeEight: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Grade"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.gradeEight}
+                        onValueChange={this.onGradeEightChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="A+" value="key1" />
+                        <Picker.Item label="A" value="key2" />
+                        <Picker.Item label="A-" value="key3" />
+                        <Picker.Item label="B+" value="key4" />
+                        <Picker.Item label="B" value="key5" />
+                        <Picker.Item label="B-" value="key6" />
+                        <Picker.Item label="C+" value="key7" />
+                        <Picker.Item label="C" value="key8" />
+                        <Picker.Item label="C-" value="key9" />
+                        <Picker.Item label="D+" value="key10" />
+                        <Picker.Item label="D" value="key11" />
+                        <Picker.Item label="D-" value="key12" />
+                        <Picker.Item label="F" value="key13" />
+                   </Picker>
+                  </Row>
+                  </Col>
+                  <Col>
+                  <CardItem>
+                    <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
+                      <Text style={{ fontSize: 16 }}>Credits/Units</Text>
+                    </Row>
+                  </CardItem>
+                  <Row>
+                    <Picker
+                        iosHeader="Select Credits/Units"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.unit}
+                        onValueChange={this.onUnitChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="1" value="key1" />
+                        <Picker.Item label="2" value="key2" />
+                        <Picker.Item label="3" value="key3" />
+                        <Picker.Item label="4" value="key4" />
+                        <Picker.Item label="5" value="key5" />
+                        <Picker.Item label="6" value="key6" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.percent}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ percent: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Credits/Units"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.unitTwo}
+                        onValueChange={this.onUnitTwoChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="1" value="key1" />
+                        <Picker.Item label="2" value="key2" />
+                        <Picker.Item label="3" value="key3" />
+                        <Picker.Item label="4" value="key4" />
+                        <Picker.Item label="5" value="key5" />
+                        <Picker.Item label="6" value="key6" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.percentTwo}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ percentTwo: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Credits/Units"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.unitThree}
+                        onValueChange={this.onUnitThreeChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="1" value="key1" />
+                        <Picker.Item label="2" value="key2" />
+                        <Picker.Item label="3" value="key3" />
+                        <Picker.Item label="4" value="key4" />
+                        <Picker.Item label="5" value="key5" />
+                        <Picker.Item label="6" value="key6" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.percentThree}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ percentThree: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Credits/Units"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.unitFour}
+                        onValueChange={this.onUnitFourChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="1" value="key1" />
+                        <Picker.Item label="2" value="key2" />
+                        <Picker.Item label="3" value="key3" />
+                        <Picker.Item label="4" value="key4" />
+                        <Picker.Item label="5" value="key5" />
+                        <Picker.Item label="6" value="key6" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.percentFour}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ percentFour: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Credits/Units"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.unitFive}
+                        onValueChange={this.onUnitFiveChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="1" value="key1" />
+                        <Picker.Item label="2" value="key2" />
+                        <Picker.Item label="3" value="key3" />
+                        <Picker.Item label="4" value="key4" />
+                        <Picker.Item label="5" value="key5" />
+                        <Picker.Item label="6" value="key6" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.percentFive}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ percentFive: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Credits/Units"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.unitSix}
+                        onValueChange={this.onUnitSixChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="1" value="key1" />
+                        <Picker.Item label="2" value="key2" />
+                        <Picker.Item label="3" value="key3" />
+                        <Picker.Item label="4" value="key4" />
+                        <Picker.Item label="5" value="key5" />
+                        <Picker.Item label="6" value="key6" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.percentSix}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ percentSix: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Credits/Units"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.unitSeven}
+                        onValueChange={this.onUnitSevenChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="1" value="key1" />
+                        <Picker.Item label="2" value="key2" />
+                        <Picker.Item label="3" value="key3" />
+                        <Picker.Item label="4" value="key4" />
+                        <Picker.Item label="5" value="key5" />
+                        <Picker.Item label="6" value="key6" />
+                   </Picker>
                   </Row>
                   <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.percentSeven}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ percentSeven: text })}
-                      />
-                    </InputGroup>
+                    <Picker
+                        iosHeader="Select Credits/Units"
+                        style={{ width: 100, flex: 1 }}
+                        mode="dropdown"
+                        selectedValue={this.state.unitEight}
+                        onValueChange={this.onUnitEightChange.bind(this)}>
+                        <Picker.Item label="..." value="key0" />
+                        <Picker.Item label="1" value="key1" />
+                        <Picker.Item label="2" value="key2" />
+                        <Picker.Item label="3" value="key3" />
+                        <Picker.Item label="4" value="key4" />
+                        <Picker.Item label="5" value="key5" />
+                        <Picker.Item label="6" value="key6" />
+                   </Picker>
                   </Row>
-                  <Row>
-                    <InputGroup borderType='regular' style={{ flex: 1 }} >
-                      <Input
-                        style={{ flex: 1 }}
-                        placeholder='-'
-                        value={this.state.percentEight}
-                        keyboardType={'numeric'}
-                        onChangeText={text => this.setState({ percentEight: text })}
-                      />
-                    </InputGroup>
-                  </Row>
+                  </Col>
               </Grid>
                 <CardItem style={{ justifyContent: 'center', alignItems: 'center' }}>
                   <Text style={{ fontSize: 16 }}>

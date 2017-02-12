@@ -5,7 +5,7 @@ import {
 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
-class OtherCalc extends React.Component {
+class GpaCalc extends React.Component {
   state = { grade: '',
    percent: '',
    answer: '',
@@ -311,4 +311,4 @@ class OtherCalc extends React.Component {
   }
 }
 
-export default OtherCalc;
+export default GpaCalc;

@@ -5,7 +5,18 @@ import {
 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
+const ReactNative = require('react-native');
+const {
+  StatusBar
+} = ReactNative;
+
 class WeightedCalc extends React.Component {
+
+
+  componentDidMount() {
+    StatusBar.setHidden(true);
+  }
+
   state = { grade: '',
    percent: '',
    answer: '',

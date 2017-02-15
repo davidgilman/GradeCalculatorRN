@@ -7,19 +7,24 @@
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
-  "iconUrl": "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
+  "iconUrl": "https://image.ibb.co/mSgsRF/appicon.png",
   "notification": {
-    "iconUrl": "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon-blue-circle.png",
+    "iconUrl": "https://image.ibb.co/mSgsRF/appicon.png",
     "color": "#000000"
   },
   "loading": {
-    "iconUrl": "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
-    "hideExponentText": false
+    "iconUrl": "https://image.ibb.co/mSgsRF/appicon.png",
+    "hideExponentText": true,
+    "backgroundColor": "#34495e"
   },
   "packagerOpts": {
     "assetExts": ["ttf", "mp4"]
   },
   "ios": {
-    "supportsTablet": true
+    "supportsTablet": false,
+    "bundleIdentifier": "co.davidgilman.gradecalc"
+  },
+  "android": {
+    "package": "co.davidgilman.gradecalc"
   }
 }

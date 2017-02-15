@@ -7,15 +7,15 @@
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
-  "iconUrl": "https://image.ibb.co/e1Z4Ov/logo3.png",
+  "iconUrl": "https://image.ibb.co/iJ4M3v/LOGO.png",
   "notification": {
-    "iconUrl": "https://image.ibb.co/e1Z4Ov/logo3.png",
+    "iconUrl": "https://image.ibb.co/iJ4M3v/LOGO.png",
     "color": "#000000"
   },
   "loading": {
-    "iconUrl": "https://image.ibb.co/e1Z4Ov/logo3.png",
+    "iconUrl": "https://image.ibb.co/iJ4M3v/LOGO.png",
     "hideExponentText": true,
-    "backgroundColor": "#34495e"
+    "backgroundColor": "#2980b9"
   },
   "packagerOpts": {
     "assetExts": ["ttf", "mp4"]

@@ -148,39 +148,34 @@ class GpaCalc extends React.Component {
     const unitSeven = check(this.state.unitSeven);
     const unitEight = check(this.state.unitEight);
 
-    const totalunit = unit + unitTwo + unitThree + unitFour
+    const totalUnit = unit + unitTwo + unitThree + unitFour
     + unitFive + unitSix + unitSeven + unitEight;
-    const tunit = 100 / totalunit;
+    const gradePoints = (grade * unit) + (gradeTwo * unitTwo) + (gradeThree * unitThree)
+    + (gradeFour * unitFour) + (gradeFive * unitFive) + (gradeSix * unitSix) +
+    (gradeSeven * unitSeven) + (gradeEight * unitEight);
 
-    const totalgrade = grade + gradeTwo + gradeThree + gradeFour + gradeFive +
-    gradeSix + gradeSeven + gradeEight;
+    const answer = gradePoints / totalUnit;
 
-    const answer = (((grade * (unit / 100)) + (gradeTwo * (unitTwo / 100))
-    + (gradeThree * (unitThree / 100)) + (gradeFour * (unitFour / 100))
-    + (gradeFive * (unitFive / 100)) + (gradeSix * (unitSix / 100))
-    + (gradeSeven * (unitSeven / 100)) + (gradeEight * (unitEight / 100)))
-    * tunit);
-
-    this.setState({ answer: totalgrade }); //answer: answer (used shorthand)
+    this.setState({ answer }); //answer: answer (used shorthand)
   }
 
   onClearPress() {
-    this.setState({ grade: '' });
-    this.setState({ unit: '' });
-    this.setState({ gradeTwo: '' });
-    this.setState({ unitTwo: '' });
-    this.setState({ gradeThree: '' });
-    this.setState({ unitThree: '' });
-    this.setState({ gradeFour: '' });
-    this.setState({ unitFour: '' });
-    this.setState({ gradeFive: '' });
-    this.setState({ unitFive: '' });
-    this.setState({ gradeSix: '' });
-    this.setState({ unitSix: '' });
-    this.setState({ gradeSeven: '' });
-    this.setState({ unitSeven: '' });
-    this.setState({ gradeEight: '' });
-    this.setState({ unitEight: '' });
+    this.setState({ grade: 'NaN' });
+    this.setState({ unit: 'NaN' });
+    this.setState({ gradeTwo: 'NaN' });
+    this.setState({ unitTwo: 'NaN' });
+    this.setState({ gradeThree: 'NaN' });
+    this.setState({ unitThree: 'NaN' });
+    this.setState({ gradeFour: 'NaN' });
+    this.setState({ unitFour: 'NaN' });
+    this.setState({ gradeFive: 'NaN' });
+    this.setState({ unitFive: 'NaN' });
+    this.setState({ gradeSix: 'NaN' });
+    this.setState({ unitSix: 'NaN' });
+    this.setState({ gradeSeven: 'NaN' });
+    this.setState({ unitSeven: 'NaN' });
+    this.setState({ gradeEight: 'NaN' });
+    this.setState({ unitEight: 'NaN' });
     this.setState({ answer: '' });
   }
 
@@ -210,7 +205,6 @@ class GpaCalc extends React.Component {
                         selectedValue={this.state.grade}
                         onValueChange={this.onGradeChange.bind(this)}>
                         <Picker.Item label="..." value="NaN" />
-                        <Picker.Item label="A+" value="4.00" />
                         <Picker.Item label="A" value="4.00" />
                         <Picker.Item label="A-" value="3.70" />
                         <Picker.Item label="B+" value="3.33" />
@@ -233,7 +227,6 @@ class GpaCalc extends React.Component {
                         selectedValue={this.state.gradeTwo}
                         onValueChange={this.onGradeTwoChange.bind(this)}>
                         <Picker.Item label="..." value="NaN" />
-                        <Picker.Item label="A+" value="4.00" />
                         <Picker.Item label="A" value="4.00" />
                         <Picker.Item label="A-" value="3.70" />
                         <Picker.Item label="B+" value="3.33" />
@@ -256,7 +249,6 @@ class GpaCalc extends React.Component {
                         selectedValue={this.state.gradeThree}
                         onValueChange={this.onGradeThreeChange.bind(this)}>
                         <Picker.Item label="..." value="NaN" />
-                        <Picker.Item label="A+" value="4.00" />
                         <Picker.Item label="A" value="4.00" />
                         <Picker.Item label="A-" value="3.70" />
                         <Picker.Item label="B+" value="3.33" />
@@ -279,7 +271,6 @@ class GpaCalc extends React.Component {
                         selectedValue={this.state.gradeFour}
                         onValueChange={this.onGradeFourChange.bind(this)}>
                         <Picker.Item label="..." value="NaN" />
-                        <Picker.Item label="A+" value="4.00" />
                         <Picker.Item label="A" value="4.00" />
                         <Picker.Item label="A-" value="3.70" />
                         <Picker.Item label="B+" value="3.33" />
@@ -302,7 +293,6 @@ class GpaCalc extends React.Component {
                         selectedValue={this.state.gradeFive}
                         onValueChange={this.onGradeFiveChange.bind(this)}>
                         <Picker.Item label="..." value="NaN" />
-                        <Picker.Item label="A+" value="4.00" />
                         <Picker.Item label="A" value="4.00" />
                         <Picker.Item label="A-" value="3.70" />
                         <Picker.Item label="B+" value="3.33" />
@@ -325,7 +315,6 @@ class GpaCalc extends React.Component {
                         selectedValue={this.state.gradeSix}
                         onValueChange={this.onGradeSixChange.bind(this)}>
                         <Picker.Item label="..." value="NaN" />
-                        <Picker.Item label="A+" value="4.00" />
                         <Picker.Item label="A" value="4.00" />
                         <Picker.Item label="A-" value="3.70" />
                         <Picker.Item label="B+" value="3.33" />
@@ -348,7 +337,6 @@ class GpaCalc extends React.Component {
                         selectedValue={this.state.gradeSeven}
                         onValueChange={this.onGradeSevenChange.bind(this)}>
                         <Picker.Item label="..." value="NaN" />
-                        <Picker.Item label="A+" value="4.00" />
                         <Picker.Item label="A" value="4.00" />
                         <Picker.Item label="A-" value="3.70" />
                         <Picker.Item label="B+" value="3.33" />
@@ -371,7 +359,6 @@ class GpaCalc extends React.Component {
                         selectedValue={this.state.gradeEight}
                         onValueChange={this.onGradeEightChange.bind(this)}>
                         <Picker.Item label="..." value="NaN" />
-                        <Picker.Item label="A+" value="4.00" />
                         <Picker.Item label="A" value="4.00" />
                         <Picker.Item label="A-" value="3.70" />
                         <Picker.Item label="B+" value="3.33" />

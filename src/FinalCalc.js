@@ -24,10 +24,6 @@ class FinalCalc extends React.Component {
     const desiredGrade = check(this.state.desiredGrade);
     const examWeight = check(this.state.examWeight);
 
-    console.log(currentGrade);
-    console.log(desiredGrade);
-    console.log(examWeight);
-
     const answerBefore = ((1 * (desiredGrade / 100)) -
      ((1 - (examWeight / 100)) * (currentGrade / 100))) / (examWeight / 100);
 

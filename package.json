@@ -1,7 +1,7 @@
 {
-  "name": "gradecalc",
-  "version": "0.0.0",
-  "description": "Hello Exponent!",
+  "name": "3-In-1 Grade Calculator App",
+  "version": "1.0.0",
+  "description": "Grade Calculator App by David Gilman",
   "author": null,
   "private": true,
   "main": "main.js",

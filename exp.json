@@ -1,19 +1,19 @@
 {
-  "name": "Grade Calculator ++",
-  "description": "This app allows you to calculate your weighted grade, GPA, and final exam all inside of one app!",
+  "name": "Grade Calculator Plus",
+  "description": "The 3-in-1 solution to all of your grade calculator needs!",
   "slug": "gradecalc",
   "privacy": "public",
   "sdkVersion": "12.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
-  "iconUrl": "https://image.ibb.co/mSgsRF/appicon.png",
+  "iconUrl": "https://image.ibb.co/e1Z4Ov/logo3.png",
   "notification": {
-    "iconUrl": "https://image.ibb.co/mSgsRF/appicon.png",
+    "iconUrl": "https://image.ibb.co/e1Z4Ov/logo3.png",
     "color": "#000000"
   },
   "loading": {
-    "iconUrl": "https://image.ibb.co/mSgsRF/appicon.png",
+    "iconUrl": "https://image.ibb.co/e1Z4Ov/logo3.png",
     "hideExponentText": true,
     "backgroundColor": "#34495e"
   },

@@ -1,6 +1,6 @@
 {
-  "name": "3-In-1 Grade Calculator App",
-  "description": "Grade Calculator App by David Gilman",
+  "name": "Grade Calculator ++",
+  "description": "This app allows you to calculate your weighted grade, GPA, and final exam all inside of one app!",
   "slug": "gradecalc",
   "privacy": "public",
   "sdkVersion": "12.0.0",

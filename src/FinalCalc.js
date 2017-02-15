@@ -87,7 +87,7 @@ class FinalCalc extends React.Component {
               </Grid>
                 <CardItem style={{ justifyContent: 'center', alignItems: 'center' }}>
                   <Text style={{ fontSize: 16 }}>
-                  You will need a: {this.state.answer}%</Text>
+                  I will need a: {this.state.answer}%</Text>
                 </CardItem>
               <CardItem>
               <Button

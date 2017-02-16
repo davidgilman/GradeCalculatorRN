@@ -1,10 +1,10 @@
 {
-  "name": "Grade Calculator Plus",
+  "name": "Grade Calc",
   "description": "The 3-in-1 solution to all of your grade calculator needs!",
   "slug": "gradecalc",
   "privacy": "public",
   "sdkVersion": "12.0.0",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
   "iconUrl": "https://image.ibb.co/iJ4M3v/LOGO.png",
@@ -25,6 +25,7 @@
     "bundleIdentifier": "co.davidgilman.gradecalc"
   },
   "android": {
-    "package": "co.davidgilman.gradecalc"
+    "package": "co.davidgilman.gradecalc",
+    "versionCode": 2
   }
 }
